@@ -900,7 +900,9 @@ TIDY_EXPORT Bool TIDY_CALL tidyNodeIsHeader( TidyNode tnod ); /* h1, h2, ... */
 TIDY_EXPORT Bool TIDY_CALL tidyNodeHasText( TidyDoc tdoc, TidyNode tnod );
 TIDY_EXPORT Bool TIDY_CALL tidyNodeGetText( TidyDoc tdoc, TidyNode tnod, TidyBuffer* buf );
 
-/* Copy the unescaped value of this node into the given TidyBuffer as UTF-8 */
+/** Copy the unescaped value of this node into the given TidyBuffer as UTF-8.
+ ** For a text node the value is the text, and for a comment node it is the text of the comment. Empty for many types of node.
+ */
 TIDY_EXPORT Bool TIDY_CALL tidyNodeGetValue( TidyDoc tdoc, TidyNode tnod, TidyBuffer* buf );
 
 TIDY_EXPORT TidyTagId TIDY_CALL tidyNodeGetId( TidyNode tnod );
