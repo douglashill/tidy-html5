@@ -97,6 +97,7 @@ typedef enum
   TidyBurstSlides,     /**< Create slides on each h2 element */
 
   TidyNumEntities,     /**< Use numeric entities */
+  TidyWriteEntities,   /**< Output character references as e.g. &quot; and &#123;. Default is yes. */
   TidyQuoteMarks,      /**< Output " marks as &quot; */
   TidyQuoteNbsp,       /**< Output non-breaking space as entity */
   TidyQuoteAmpersand,  /**< Output naked ampersand as &amp; */
