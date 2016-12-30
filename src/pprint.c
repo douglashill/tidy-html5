@@ -819,6 +819,7 @@ static void PPrintChar( TidyDocImpl* doc, uint c, uint mode )
     TidyPrintImpl* pprint  = &doc->pprint;
     uint outenc = cfg( doc, TidyOutCharEncoding );
     Bool qmark = cfgBool( doc, TidyQuoteMarks );
+    Bool writeEntities = cfgBool( doc, TidyWriteEntities );
 
     if ( c == ' ' && !(mode & (PREFORMATTED | COMMENT | ATTRIBVALUE | CDATA)))
     {
@@ -837,7 +838,7 @@ static void PPrintChar( TidyDocImpl* doc, uint c, uint mode )
     }
 
     /* comment characters are passed raw */
-    if ( mode & (COMMENT | CDATA) )
+    if ( ! writeEntities || mode & (COMMENT | CDATA) )
     {
         AddChar( pprint, c );
         return;

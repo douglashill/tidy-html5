@@ -263,6 +263,7 @@ static const TidyOptionImpl option_defs[] =
   { TidyBurstSlides,             PP, "split",                       BL, no,              ParseBool,         boolPicks       },
 
   { TidyNumEntities,             MU, "numeric-entities",            BL, no,              ParseBool,         boolPicks       },
+  { TidyWriteEntities,           MU, "write-entities",              BL, yes,             ParseBool,         boolPicks       },
   { TidyQuoteMarks,              MU, "quote-marks",                 BL, no,              ParseBool,         boolPicks       },
   { TidyQuoteNbsp,               MU, "quote-nbsp",                  BL, yes,             ParseBool,         boolPicks       },
   { TidyQuoteAmpersand,          MU, "quote-ampersand",             BL, yes,             ParseBool,         boolPicks       },
