@@ -583,8 +583,10 @@ static void ResetLineAfterWrap( TidyPrintImpl* pprint )
 
         if ( ! IsWrapInAttrVal(pprint) )
         {
-            while ( q < end && *q == ' ' )
-                ++q, ++pprint->wraphere;
+            while ( q < end && *q == ' ' ) {
+                ++q;
+                ++pprint->wraphere;
+            }
         }
 
         while ( q < end )
