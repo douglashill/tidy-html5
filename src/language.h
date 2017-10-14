@@ -246,7 +246,7 @@ Bool tidySetLanguage( ctmbstr languageCode );
 /**
  *  Gets the current language used by Tidy.
  */
-ctmbstr tidyGetLanguage();
+ctmbstr tidyGetLanguage(void);
 
 /**
  *  Provides a string given `messageType` in the current
@@ -277,7 +277,7 @@ ctmbstr tidyDefaultString( uint messageType );
  *  these are provided for documentation generation purposes
  *  and probably aren't useful for LibTidy implementors.
  */
-TidyIterator getStringKeyList();
+TidyIterator getStringKeyList(void);
 
 /*
  *  Provides the next key value in Tidy's list of localized
@@ -292,7 +292,7 @@ uint getNextStringKey( TidyIterator* iter );
  *  in Tidy's structure of Windows<->POSIX local mapping.
  *  Items can be retrieved with getNextWindowsLanguage();
  */
-TidyIterator getWindowsLanguageList();
+TidyIterator getWindowsLanguageList(void);
 
 /**
  *  Returns the next record of type `localeMapItem` in
@@ -305,7 +305,7 @@ const tidyLocaleMapItem *getNextWindowsLanguage( TidyIterator* iter );
  *  in Tidy's list of installed language codes.
  *  Items can be retrieved with getNextInstalledLanguage();
  */
-TidyIterator getInstalledLanguageList();
+TidyIterator getInstalledLanguageList(void);
 
 /**
  *  Returns the next installed language.
@@ -319,7 +319,7 @@ ctmbstr getNextInstalledLanguage( TidyIterator* iter );
  *  `TidyReportFilter3`.
  *  Items can be retrieved with getNextErrorCode();
  */
-TidyIterator getErrorCodeList();
+TidyIterator getErrorCodeList(void);
 
 /**
  *  Returns the next error code.

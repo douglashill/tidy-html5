@@ -736,7 +736,7 @@ Bool tidySetLanguage( ctmbstr languageCode )
 /**
  *  Gets the current language used by Tidy.
  */
-ctmbstr tidyGetLanguage()
+ctmbstr tidyGetLanguage(void)
 {
     languageDefinition *langDef = tidyLanguages.currentLanguage;
     languageDictionary *langDict = &langDef->messages;
@@ -779,7 +779,7 @@ const uint TY_(tidyStringKeyListSize)()
  *  these are provided for documentation generation purposes
  *  and probably aren't useful for LibTidy implementors.
  */
-TidyIterator getStringKeyList()
+TidyIterator getStringKeyList(void)
 {
     return (TidyIterator)(size_t)1;
 }
@@ -832,7 +832,7 @@ const uint TY_(tidyLanguageListSize)()
  *  in Tidy's structure of Windows<->POSIX local mapping.
  *  Items can be retrieved with getNextWindowsLanguage();
  */
-TidyIterator getWindowsLanguageList()
+TidyIterator getWindowsLanguageList(void)
 {
     return (TidyIterator)(size_t)1;
 }
@@ -882,7 +882,7 @@ const uint TY_(tidyInstalledLanguageListSize)()
  *  in Tidy's list of installed language codes.
  *  Items can be retrieved with getNextInstalledLanguage();
  */
-TidyIterator getInstalledLanguageList()
+TidyIterator getInstalledLanguageList(void)
 {
     return (TidyIterator)(size_t)1;
 }
@@ -932,7 +932,7 @@ const uint TY_(tidyErrorCodeListSize)()
  *  `TidyReportFilter3`.
  *  Items can be retrieved with getNextErrorCode();
  */
-TidyIterator getErrorCodeList()
+TidyIterator getErrorCodeList(void)
 {
     return (TidyIterator)(size_t)1;
 }
