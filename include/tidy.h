@@ -481,16 +481,16 @@ TIDY_EXPORT void TIDY_CALL        tidyGeneralInfo( TidyDoc tdoc );
     
     
 /** Load an ASCII Tidy configuration file and set the configuration per its
- ** contents.
- ** @result Returns 0 upon success, or any other value if there was an error.
+ ** contents. Reports config option errors, which can be filtered.
+ ** @result Returns 0 upon success, or any other value if there was an option error.
  */
 TIDY_EXPORT int TIDY_CALL         tidyLoadConfig(TidyDoc tdoc,      /**< The TidyDoc to which to apply the configuration. */
                                                  ctmbstr configFile /**< The complete path to the file to load. */
                                                  );
 
 /** Load a Tidy configuration file with the specified character encoding, and
- ** set the configuration per its contents. 
- ** @result Returns 0 upon success, or any other value if there was an error.
+ ** set the configuration per its contents.  Reports config option errors, which can be filtered.
+ ** @result Returns 0 upon success, or any other value if there was an option error.
  */
 TIDY_EXPORT int TIDY_CALL         tidyLoadConfigEnc(TidyDoc tdoc,       /**< The TidyDoc to which to apply the configuration. */
                                                     ctmbstr configFile, /**< The complete path to the file to load. */
@@ -2092,13 +2092,13 @@ TIDY_EXPORT const tidyLocaleMapItem* TIDY_CALL getNextWindowsLanguage( TidyItera
  ** @param item An instance of tidyLocalMapItem to query.
  ** @result Returns a string with the Windows name of the mapping.
  */
-TIDY_EXPORT const ctmbstr TIDY_CALL TidyLangWindowsName( const tidyLocaleMapItem *item );
+TIDY_EXPORT ctmbstr TIDY_CALL TidyLangWindowsName( const tidyLocaleMapItem *item );
 
 /** Given a `tidyLocalMapItem`, return the POSIX name.
  ** @param item An instance of tidyLocalMapItem to query.
  ** @result Returns a string with the POSIX name of the mapping.
  */
-TIDY_EXPORT const ctmbstr TIDY_CALL TidyLangPosixName( const tidyLocaleMapItem *item );
+TIDY_EXPORT ctmbstr TIDY_CALL TidyLangPosixName( const tidyLocaleMapItem *item );
 
 /** @}
  ** @name Getting Localized Strings
